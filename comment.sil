@@ -1,0 +1,131 @@
+\begin[class=book]{document}
+\script[src=packages/texmode]
+\script[src=packages/image]
+\script{
+-- From sile-project/sile documentation/macros.xml
+local simpletable = SILE.require('doc_packages/simpletable')
+simpletable.init(SILE.documentState.documentClass, {
+  tableTag = 'table',
+  trTag = 'tr',
+  tdTag = 'td'
+})
+}
+\texmode[_="%]
+\script[src=packages/frametricks]
+\script[src=packages/rotate]
+\script[src=packages/tate]
+\script[src=packages/rebox]
+\script[src=packages/linespacing]
+\script[src=packages/tableofcontents]
+\script[src=packages/pullquote]
+\script[src=packages/url]
+\script[src=doc_packages/simpletable]
+\script[src=doc_packages/lists]
+\script[src=doc_packages/unichar]
+\script[src=packages/pdf]
+\script[src=packages/raiselower]
+\script[src=packages/font-fallback]
+\script[src=packages/color]
+\script[src=packages/rules]
+\language[main=en]
+\define[command=book:chapter:post]{\thinspace\skip}
+\define[command=open-double-page]{\eject\noindent\par}
+\define[command=code]{\font[family=Latin Modern Mono]{\process}}
+% \process should be single \href
+\define[command=BH]{\color[color=#000099]{\process}}
+\define[command=code]{\font[family=Hack,size=0.85em]{\process}}
+\set[parameter=font.family,value=EB Garamond,makedefault=true]
+\set[parameter=font.size,value=12,makedefault=true]
+\define[command=footnote:font]{\font[size=0.9em]{\set[parameter=document.baselineskip,value=0.5ex]\process\par}}
+\font:add-fallback[family=Noto Serif CJK JP]
+\define[command=SILE]{S\lower[height=0.5ex]{I}L\kern[width=-.2em]\raise[height=0.6ex]{\font[features=+smcp]{e}}}
+\define[command=mathfourtd]{\td{\font[family=MathJax_Size4]{\process}}}
+\typeset-into[frame=folio]{\begin[size=12pt]{font}\hfill This document was typeset with \SILE.\end{font}}
+\par\center{\font[size=24pt,weight=1000]{Comment on L2/20-270 regarding two \em{puncti}}}
+\medskip
+\center{\font[size=18pt,weight=400]{Fredrick R. Brennan}}
+\medskip
+"]
+\begin{table}% ㇷ゚𛅦
+%BĒNG HOK LÊ
+\font[size=18pt,weight=400]{
+\tr{\mathfourtd{\glue[width=3.9cm]⎛}\td{\glue[width=16%pw]!?‽}\mathfourtd{⎞}}
+\tr{\mathfourtd{\glue[width=3.9cm]\rebox[width=0pt]{⎜}\rebox[width=0pt]{\lower[height=5pt]{⎜}}\raise[height=6pt]{⎜}}\td{
+\raise[height=4pt]{
+\glue[width=2.30cm]Psih\glue[width=-0.25em]\raise[height=0.3em]{\unichar{0x0302}}\glue[width=0.25em]edelisto
+}
+}\mathfourtd{\rebox[width=0pt]{\lower[height=5pt]{⎟}}\raise[height=6pt]{⎟} }}
+\tr{\mathfourtd{\glue[width=3.9cm]⎝}\td{\font[family=TT2020Base,style=Italic]{copypaste}\font[family=Android Emoji]{📧}\font[family=TT2020Base,style=Italic]{kittens.ph}}\mathfourtd{⎠}}
+}
+\end{table}
+\texmode[_="%]
+\medskip
+\center{\font[size=18pt,weight=400]{20 October 2020}}
+\medskip
+\medskip
+\medskip
+\medskip
+\medskip
+\medskip
+\medskip
+\medskip
+\par\eject
+
+I'm writing this document primarily to make the argument that I think the two \em{puncti} in L2/20-270 should not be encoded but should remain unified with \font[features=+smcp]{Question Mark} and \font[features=+smcp]{Exclamation Mark}, as has been the case for quite a while, and if desired to differentiate the two, users should use other fonts, or an OpenType feature like \code{hist}---Historical Forms.
+
+Primarily, I question the degree to which medeivalists actually view these as separate characters.
+
+It seems clear to me that both characters have nearly identical function to the modern characters, and in many cases, very similar form, to the degree that they are glyph variants and not separate characters.
+
+\section{The names of the \em{puncti} are just Latin translations of the English names of the modern characters}
+
+I found a few sources which use the names \em{punctus exclamativus} and \em{exclamation mark} interchangably:
+
+\medskip
+
+\noindent Weiskott, Eric. \em{Making Beowulf Scream: Exclamation and the Punctuation of Old English Poetry}
+
+\noindent \em{The Journal of English and Germanic Philology}, Vol. 111, No. 1 (January 2012), pp. 25-41
+
+\img[src=weiskott.png]
+
+\noindent Fidel Sebastián Mediavilla. \em{La puntuación del Quijote (1605 y 1615)}. (2008). Academia del Hispanismo. p. 34
+
+\img[width=50%pw, src=mediavilla.png]
+
+And likewise the \em{punctus interrogativus}:
+
+\medskip
+
+\noindent Kienzle, Beverley Mayne. \em{Translation of Homilies on the Gospels by Hildegard of Bingen}. (2011) p. 28
+
+\img[src=kienzle.png]
+
+\noindent Lennard, John. \em{The Poetry Handbook}. (2006) p. 120
+
+\img[src=lennard.png]
+
+\noindent Smith, Jeremy J. \em{Transforming Early English: The Reinvention of Early English and Older Scots}. (2020) pp. 85--88.
+
+\img[src=smith2.png]
+
+\eject\par
+
+\img[src=smith.png]
+
+As can be seen, Smith (2020) uses a modern ? for the \em{punctus interrogativus}, see red circled ?.
+
+Other sources cited in L2/20-270 similarly tend to use glyph variants in paleography, e.g. figure 7 from Parkes (1993). But before coming across L2/20-270 I viewed such paleographic transcriptions as having been done primarily so readers would be aware that the mark is not quite the modern mark, and that not all of the rules of intonation apply. I certainly never viewed it as its own character.
+
+Indeed, despite showing several glyph variants, Parkes is clear that the \em{exclamativus} is the \em{\strong{equivalent}} of the modern mark:
+
+\medskip
+
+\noindent Parkes, M. B. \em{Pause and Effect}. (1993) p. 306
+
+\img[src=parkes.png]
+
+If even medievalists use words like ``equivalent'' and use the terms interchangably, it's hard in my mind to justify the \em{puncti} as anything but glyph variants.
+
+"]
+\end{document}

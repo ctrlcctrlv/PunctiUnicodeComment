@@ -1,0 +1,3 @@
+[submodule "doc_packages/texmode"]
+	path = doc_packages/texmode
+	url = https://github.com/ctrlcctrlv/sile-texmode
